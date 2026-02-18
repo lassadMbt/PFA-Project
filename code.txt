@@ -1,0 +1,954 @@
+/* components/About.tsx */ 
+
+import React from 'react';
+import { Award, Users, Target } from 'lucide-react';
+import { COMPANY_INFO } from '../constants';
+
+const About: React.FC = () => {
+  const values = [
+    { icon: <Award className="w-6 h-6" />, title: "Qualité Supérieure", desc: "Matériaux certifiés et finitions haut de gamme." },
+    { icon: <Users className="w-6 h-6" />, title: "Service Client", desc: "Écoute attentive et accompagnement personnalisé." },
+    { icon: <Target className="w-6 h-6" />, title: "Innovation", desc: "Technologie italienne de dernière génération." }
+  ];
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex-1 relative">
+          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" 
+              alt="Atelier PFA" 
+              className="w-full aspect-[4/5] object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-10 -right-10 bg-white p-8 rounded-2xl shadow-xl z-20 hidden md:block">
+            <div className="text-5xl font-extrabold text-blue-900 mb-2">15+</div>
+            <div className="text-slate-500 font-bold uppercase tracking-tighter text-sm">Années d'Expérience</div>
+          </div>
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl -z-10"></div>
+        </div>
+
+        <div className="flex-1">
+          <h2 className="text-orange-500 font-bold uppercase tracking-widest mb-4">À Propos de PFA</h2>
+          <h3 className="text-4xl font-heading font-extrabold text-blue-950 mb-6 leading-tight">
+            Votre Partenaire de Confiance en Tunisie
+          </h3>
+          <p className="text-slate-600 text-lg mb-6 leading-relaxed">
+            {COMPANY_INFO.name} est leader dans la fabrication et l'installation de portes et fermetures automatiques depuis plus de 15 ans. Basés à l'Ariana, nous servons tout le territoire tunisien avec un engagement sans faille pour la qualité.
+          </p>
+          <p className="text-slate-600 text-lg mb-10 leading-relaxed">
+            Notre expertise repose sur une sélection rigoureuse de nos partenaires, notamment pour les motorisations italiennes réputées pour leur fiabilité et leur silence de fonctionnement.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {values.map((val, i) => (
+              <div key={i} className="p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                <div className="text-orange-500 mb-3">{val.icon}</div>
+                <h5 className="font-bold text-slate-900 mb-1">{val.title}</h5>
+                <p className="text-xs text-slate-500">{val.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default About;
+
+
+/* components/Contact.tsx */ 
+
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { COMPANY_INFO } from '../constants';
+
+const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    project: 'Rideau métallique',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Merci ! Votre demande a été envoyée. Nous vous contacterons sous peu.');
+    setFormData({ name: '', phone: '', email: '', project: 'Rideau métallique', message: '' });
+  };
+
+  const getPhoneHref = (phone: string) => `tel:${phone.replace(/[^0-9+]/g, '')}`;
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <h2 className="text-orange-500 font-bold uppercase tracking-widest mb-4">Contactez-nous</h2>
+          <h3 className="text-4xl font-heading font-extrabold text-white mb-8">
+            Un Projet ? Parlons-en !
+          </h3>
+          
+          <div className="space-y-8 mb-12">
+            <div className="flex items-start gap-6 group">
+              <div className="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center shrink-0 border border-blue-700/50 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h5 className="font-bold text-lg mb-1">Notre Adresse</h5>
+                <p className="text-slate-400 group-hover:text-white transition-colors">{COMPANY_INFO.address}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-6 group">
+              <div className="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center shrink-0 border border-blue-700/50 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+                <Phone className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h5 className="font-bold text-lg mb-1">Téléphones</h5>
+                {COMPANY_INFO.phones.map((tel, i) => (
+                  <a key={i} href={getPhoneHref(tel)} className="block text-slate-400 hover:text-orange-500 transition-colors font-semibold">
+                    {tel}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-start gap-6 group">
+              <div className="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center shrink-0 border border-blue-700/50 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h5 className="font-bold text-lg mb-1">Email</h5>
+                <a href={`mailto:${COMPANY_INFO.email}`} className="text-slate-400 hover:text-orange-500 transition-colors font-semibold">
+                  {COMPANY_INFO.email}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl overflow-hidden h-64 shadow-2xl grayscale hover:grayscale-0 transition-all border border-white/10">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.956740682285!2d10.190696!3d36.861759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd352697b0032b%3A0x6a2c589b3f46a29!2sBoulevard%20de%20l&#39;Environnement%2C%20Ariana!5e0!3m2!1sen!2stn!4v1715000000000!5m2!1sen!2stn" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              loading="lazy"
+              title="PFA Location"
+            ></iframe>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-3xl p-8 md:p-12 text-slate-900 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16"></div>
+          <h4 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            Devis Gratuit en 24h
+            <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+          </h4>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Nom Complet</label>
+                <input 
+                  required
+                  type="text" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                  placeholder="Ex: Ahmed Ben Salah"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Téléphone</label>
+                <input 
+                  required
+                  type="tel" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                  placeholder="Ex: 46 985 975"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Type de Projet</label>
+              <select 
+                value={formData.project}
+                onChange={(e) => setFormData({...formData, project: e.target.value})}
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+              >
+                <option>Rideau métallique</option>
+                <option>Store à bras invisible</option>
+                <option>Automatisation de porte existante</option>
+                <option>Maintenance / SAV</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Message</label>
+              <textarea 
+                rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                placeholder="Décrivez brièvement votre besoin..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit"
+              className="w-full bg-orange-500 text-white border-2 border-orange-500 font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] shadow-xl hover:bg-white hover:text-blue-950 hover:border-white"
+            >
+              Envoyer ma demande
+              <Send className="w-5 h-5" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
+/* components/FeaturedProducts.tsx */
+import React from 'react';
+import { CheckCircle2, Star, Zap } from 'lucide-react';
+import { PRODUCTS } from '../constants';
+
+const FeaturedProducts: React.FC = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h2 className="text-blue-900 text-sm font-bold uppercase tracking-[0.2em] mb-3">Nos Solutions Premium</h2>
+        <h3 className="text-3xl md:text-5xl font-heading font-extrabold text-slate-900">
+          Systèmes de Fermeture Sur-Mesure
+        </h3>
+        <div className="w-24 h-1.5 bg-orange-500 mx-auto mt-6"></div>
+      </div>
+
+      <div className="space-y-24">
+        {PRODUCTS.map((product, index) => (
+          <div key={product.id} className={`flex flex-col lg:items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+            <div className="flex-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+                <img 
+                  src={product.image} 
+                  alt={product.title}
+                  className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-6 left-6 bg-blue-900 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 shadow-lg z-10">
+                  <Star className="w-4 h-4 text-orange-400 fill-orange-400" />
+                  Produit Phare
+                </div>
+                <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            <div className="flex-1">
+              <h4 className="text-orange-500 font-bold mb-2 flex items-center gap-2 uppercase tracking-wide">
+                <Zap className="w-4 h-4 fill-orange-500" />
+                {product.subtitle}
+              </h4>
+              <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-blue-950 mb-6">
+                {product.title}
+              </h3>
+              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+                {product.description}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-10">
+                {product.features.map((feature, i) => (
+                  <div key={i} className="flex items-start gap-3 group/feat">
+                    <CheckCircle2 className="w-5 h-5 text-blue-800 shrink-0 mt-0.5 group-hover/feat:text-orange-600 transition-colors" />
+                    <span className="text-slate-700 text-sm font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {product.innovations && (
+                <div className="bg-blue-50 border-l-4 border-blue-800 p-6 rounded-r-xl mb-8 shadow-sm">
+                  <h5 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                    Innovations Exclusives
+                  </h5>
+                  <ul className="space-y-2">
+                    {product.innovations.map((inn, i) => (
+                      <li key={i} className="text-blue-800 text-sm flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                        {inn}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="#contact" 
+                  className="bg-blue-900 text-white border-2 border-blue-900 px-8 py-4 rounded-lg font-bold transition-all shadow-lg hover:bg-white hover:text-blue-900"
+                >
+                  Demander un Devis
+                </a>
+                {product.id === 'rideaux-metalliques' && (
+                  <div className="flex items-center gap-2 px-6 py-4 bg-orange-100 text-orange-800 rounded-lg font-bold border border-orange-200">
+                    Garantie 3 Ans
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default FeaturedProducts;
+
+
+/* components/FloatingCTA.tsx */
+import React from 'react';
+import { Phone, MessageCircle } from 'lucide-react';
+import { COMPANY_INFO } from '../constants';
+
+const FloatingCTA: React.FC = () => {
+  const getPhoneHref = (phone: string) => `tel:${phone.replace(/[^0-9+]/g, '')}`;
+  const getWhatsAppHref = (phone: string) => `https://wa.me/${phone.replace(/[^0-9]/g, '')}`;
+
+  return (
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
+      {/* Phone Button */}
+      <a 
+        href={getPhoneHref(COMPANY_INFO.phones[0])}
+        className="w-14 h-14 bg-blue-800 text-white border-2 border-blue-800 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 group hover:bg-white hover:text-blue-800"
+        title="Appeler PFA"
+      >
+        <Phone className="w-6 h-6 group-hover:animate-shake" />
+      </a>
+
+      {/* WhatsApp Link */}
+      <a 
+        href={getWhatsAppHref(COMPANY_INFO.phones[1])}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-14 h-14 bg-green-500 text-white border-2 border-green-500 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 group hover:bg-white hover:text-green-600"
+        title="WhatsApp PFA"
+      >
+        <MessageCircle className="w-7 h-7" />
+      </a>
+      
+      <style>{`
+        @keyframes shake {
+          0%, 100% { transform: rotate(0); }
+          25% { transform: rotate(-10deg); }
+          75% { transform: rotate(10deg); }
+        }
+        .animate-shake {
+          animation: shake 0.5s infinite;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default FloatingCTA;
+
+
+/* components/Footer.tsx */
+import React from 'react';
+import { COMPANY_INFO } from '../constants';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="space-y-6">
+            <div className="flex items-center gap-2 group cursor-pointer">
+              <div className="w-10 h-10 bg-blue-800 rounded-lg flex items-center justify-center font-bold text-xl text-white group-hover:bg-orange-500 transition-colors">
+                P
+              </div>
+              <span className="font-heading font-extrabold text-2xl tracking-tighter text-white group-hover:text-orange-500 transition-colors">
+                PFA
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed">
+              Expertise premium en installation de fermetures automatiques. Solutions sur-mesure pour commerces et résidences en Tunisie.
+            </p>
+            <div className="flex gap-4">
+              <a 
+                href={COMPANY_INFO.tiktokLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center border border-slate-800 hover:bg-white hover:text-blue-950 transition-all"
+                aria-label="TikTok"
+              >
+                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.023c1.108 0 2.164.194 3.141.549a1.002 1.002 0 01.597.917V5.55c0 .543-.431.989-.974.998-1.077.017-2.083-.243-2.977-.732V14.5c0 3.314-2.686 6-6 6s-6-2.686-6-6 2.686-6 6-6c.404 0 .794.041 1.171.117a1.002 1.002 0 01.802.979v4.22c0 .53-.414.969-.942.993a2.03 2.03 0 00-.229-.013c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2V1a1 1 0 011-1h3.411z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-sm border-b border-orange-500/30 pb-2 inline-block">Liens Rapides</h5>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><a href="#accueil" className="hover:text-orange-500 transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Accueil</a></li>
+              <li><a href="#produits" className="hover:text-orange-500 transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Produits</a></li>
+              <li><a href="#services" className="hover:text-orange-500 transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Services</a></li>
+              <li><a href="#realisations" className="hover:text-orange-500 transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Réalisations</a></li>
+              <li><a href="#contact" className="hover:text-orange-500 transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-sm border-b border-orange-500/30 pb-2 inline-block">Nos Produits</h5>
+            <ul className="space-y-4 text-sm font-medium">
+              <li><a href="#produits" className="hover:text-orange-500 transition-colors">Rideaux Métalliques Luxe</a></li>
+              <li><a href="#produits" className="hover:text-orange-500 transition-colors">Stores Bras Invisible</a></li>
+              <li><a href="#produits" className="hover:text-orange-500 transition-colors">Motorisation Italienne</a></li>
+              <li><a href="#produits" className="hover:text-orange-500 transition-colors">Solutions de Sécurité</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-sm border-b border-orange-500/30 pb-2 inline-block">Horaires</h5>
+            <ul className="space-y-4 text-sm font-medium">
+              <li className="flex justify-between">
+                <span>Lundi - Vendredi</span>
+                <span className="text-white">08:00 - 18:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Samedi</span>
+                <span className="text-white">08:00 - 14:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Dimanche</span>
+                <span className="text-orange-500 font-bold uppercase text-[10px] bg-orange-500/10 px-2 py-0.5 rounded">Urgence</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+          <p>© 2024 {COMPANY_INFO.name}. Tous droits réservés.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
+            <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+
+/* components/Hero.tsx */
+import React from 'react';
+import { ChevronRight, ArrowDown } from 'lucide-react';
+
+const Hero: React.FC = () => {
+  return (
+    <div className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-10000 hover:scale-110"
+        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2000")' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/85 to-transparent"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-2xl text-white">
+          <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/40 text-orange-400 px-4 py-1.5 rounded-full text-sm font-bold mb-6 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+            </span>
+            Expertise Premium en Tunisie
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 leading-tight">
+            L'Excellence en <span className="text-orange-500">Automatisation</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed font-light">
+            Portes, rideaux métalliques et stores haut de gamme. Design italien, robustesse tunisienne.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="#produits"
+              className="bg-orange-500 text-white border-2 border-orange-500 px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all group hover:bg-white hover:text-orange-600 hover:border-white shadow-xl"
+            >
+              Nos Produits
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a 
+              href="#contact"
+              className="bg-white/10 backdrop-blur-md text-white border-2 border-white/40 px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all hover:bg-white hover:text-blue-900 hover:border-white shadow-lg"
+            >
+              Demander un Devis
+            </a>
+          </div>
+
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-white/20 pt-8">
+            <div className="hover:translate-y-[-4px] transition-transform duration-300">
+              <div className="text-3xl font-bold text-orange-500">15+</div>
+              <div className="text-xs text-slate-300 uppercase tracking-widest font-semibold">Ans d'Expérience</div>
+            </div>
+            <div className="hover:translate-y-[-4px] transition-transform duration-300">
+              <div className="text-3xl font-bold text-orange-500">1000+</div>
+              <div className="text-xs text-slate-300 uppercase tracking-widest font-semibold">Projets Réalisés</div>
+            </div>
+            <div className="hidden md:block hover:translate-y-[-4px] transition-transform duration-300">
+              <div className="text-3xl font-bold text-orange-500">3 Ans</div>
+              <div className="text-xs text-slate-300 uppercase tracking-widest font-semibold">Garantie Moteur</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#produits" className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity p-2">
+        <ArrowDown className="w-8 h-8" />
+      </a>
+    </div>
+  );
+};
+
+export default Hero;
+
+
+/* components/Navbar.tsx */
+import React, { useState } from 'react';
+import { Menu, X, Phone } from 'lucide-react';
+import { COMPANY_INFO } from '../constants';
+
+interface NavbarProps {
+  isScrolled: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'Accueil', href: '#accueil' },
+    { name: 'Produits', href: '#produits' },
+    { name: 'Services', href: '#services' },
+    { name: 'À Propos', href: '#a-propos' },
+    { name: 'Réalisations', href: '#realisations' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  const getPhoneHref = (phone: string) => `tel:${phone.replace(/[^0-9+]/g, '')}`;
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
+          <div className="flex-shrink-0 flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+            <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl transition-all duration-300 ${isScrolled || isOpen ? 'bg-blue-800 text-white group-hover:bg-orange-600' : 'bg-white text-blue-800 group-hover:bg-orange-500 group-hover:text-white'}`}>
+              P
+            </div>
+            <span className={`font-heading font-extrabold text-2xl tracking-tighter transition-colors ${isScrolled || isOpen ? 'text-blue-900 group-hover:text-blue-950' : 'text-white group-hover:text-orange-400'}`}>
+              PFA
+            </span>
+          </div>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-8 items-center">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-orange-500 ${isScrolled ? 'text-slate-700 hover:text-blue-900' : 'text-white hover:text-orange-400'}`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={getPhoneHref(COMPANY_INFO.phones[0])}
+              className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all transform hover:scale-105 border-2 shadow-md ${
+                isScrolled 
+                  ? 'bg-orange-500 border-orange-500 text-white hover:bg-blue-950 hover:border-blue-950' 
+                  : 'bg-orange-500 border-orange-500 text-white hover:bg-white hover:text-orange-600 hover:border-white'
+              }`}
+            >
+              <Phone className="w-4 h-4" />
+              Devis Gratuit
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-lg transition-colors ${
+                (isScrolled || isOpen) 
+                  ? 'text-slate-900 hover:bg-slate-100' 
+                  : 'text-white hover:bg-white/10'
+              }`}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Nav */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-2xl absolute top-full left-0 right-0 py-8 border-t border-slate-100 animate-slide-down">
+          <div className="flex flex-col items-center space-y-6 px-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-xl font-bold text-slate-800 hover:text-blue-900 transition-colors w-full text-center py-2"
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={getPhoneHref(COMPANY_INFO.phones[0])}
+              className="bg-orange-500 text-white border-2 border-orange-500 px-10 py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-blue-950 hover:border-blue-950 transition-all shadow-lg w-full max-w-xs"
+            >
+              <Phone className="w-5 h-5" />
+              Appeler Maintenant
+            </a>
+          </div>
+        </div>
+      )}
+      <style>{`
+        @keyframes slide-down {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-down {
+          animation: slide-down 0.3s ease-out forwards;
+        }
+      `}</style>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+/* components/Portfolio.tsx */
+import React from 'react';
+import { PROJECTS } from '../constants';
+
+const Portfolio: React.FC = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h2 className="text-orange-500 font-bold uppercase tracking-widest mb-4">Nos Réalisations</h2>
+        <h3 className="text-3xl md:text-5xl font-heading font-extrabold text-blue-950">
+          Ils nous font confiance
+        </h3>
+        <p className="mt-4 text-slate-500 text-lg max-w-2xl mx-auto">
+          Découvrez quelques-unes de nos installations de rideaux métalliques et stores à travers la Tunisie.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {PROJECTS.map((project, index) => (
+          <div key={index} className="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-end p-8 text-white">
+              <span className="text-orange-400 font-bold text-xs uppercase tracking-widest mb-2">{project.category}</span>
+              <h4 className="text-xl font-bold">{project.title}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-16 text-center">
+        <a 
+          href="https://www.tiktok.com/@p.f.a.1" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 text-blue-900 font-bold border-2 border-blue-900 px-8 py-3 rounded-full hover:bg-blue-900 hover:text-white transition-all"
+        >
+          Voir plus sur TikTok
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.023c1.108 0 2.164.194 3.141.549a1.002 1.002 0 01.597.917V5.55c0 .543-.431.989-.974.998-1.077.017-2.083-.243-2.977-.732V14.5c0 3.314-2.686 6-6 6s-6-2.686-6-6 2.686-6 6-6c.404 0 .794.041 1.171.117a1.002 1.002 0 01.802.979v4.22c0 .53-.414.969-.942.993a2.03 2.03 0 00-.229-.013c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2V1a1 1 0 011-1h3.411z"/></svg>
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;
+
+
+/* components/Services.tsx */
+import React from 'react';
+import { SERVICES } from '../constants';
+
+const Services: React.FC = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div className="lg:col-span-1">
+          <h2 className="text-orange-500 font-bold uppercase tracking-widest mb-4">Notre Accompagnement</h2>
+          <h3 className="text-4xl font-heading font-extrabold text-blue-950 mb-6 leading-tight">
+            Des Services Clés en Main pour Votre Tranquillité
+          </h3>
+          <p className="text-slate-600 mb-8 text-lg">
+            De la conception à la maintenance, PFA s'engage à fournir une prestation d'excellence pour tous vos projets d'automatisation.
+          </p>
+          <div className="flex gap-4 items-center p-4 bg-slate-50 rounded-2xl border border-slate-100">
+            <div className="w-12 h-12 bg-blue-900 text-white flex items-center justify-center rounded-full font-bold">24</div>
+            <p className="text-sm font-medium text-slate-700">Service d'assistance disponible pour les urgences techniques.</p>
+          </div>
+        </div>
+
+        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {SERVICES.map((service, index) => (
+            <div 
+              key={index} 
+              className="group p-8 bg-white border border-slate-100 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-100"
+            >
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition-colors">
+                <span className="group-hover:text-white transition-colors">
+                  {service.icon}
+                </span>
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-900">
+                {service.title}
+              </h4>
+              <p className="text-slate-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Services;
+
+/* App.tsx */
+import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import FeaturedProducts from './components/FeaturedProducts';
+import About from './components/About';
+import Services from './components/Services';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import FloatingCTA from './components/FloatingCTA';
+
+const App: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar isScrolled={isScrolled} />
+      
+      <main className="flex-grow">
+        <section id="accueil">
+          <Hero />
+        </section>
+
+        <section id="produits" className="py-20 bg-slate-50">
+          <FeaturedProducts />
+        </section>
+
+        <section id="services" className="py-20">
+          <Services />
+        </section>
+
+        <section id="a-propos" className="py-20 bg-slate-50">
+          <About />
+        </section>
+
+        <section id="realisations" className="py-20">
+          <Portfolio />
+        </section>
+
+        <section id="contact" className="py-20 bg-slate-900 text-white">
+          <Contact />
+        </section>
+      </main>
+
+      <Footer />
+      <FloatingCTA />
+    </div>
+  );
+};
+
+export default App;
+
+
+/* constants.tsx */
+import React from 'react';
+import { Settings, ShieldCheck, PenTool, Headset } from 'lucide-react';
+import { Product, Service, Project } from './types';
+
+export const COMPANY_INFO = {
+  name: "PFA - Ste Portes et fermeture automatique SARL",
+  shortName: "PFA Automatisme",
+  address: "20 boulevards de l'environnement Ariana, Ariana, Tunisia",
+  phones: ["46 985 975", "+216 24 636 324"],
+  email: "pfa.automatisem@gmail.com",
+  tiktok: "@p.f.a.1",
+  tiktokLink: "https://www.tiktok.com/@p.f.a.1"
+};
+
+export const PRODUCTS: Product[] = [
+  {
+    id: "rideaux-metalliques",
+    title: "Rideaux Métalliques Premium",
+    subtitle: "Technologie Silencieuse & Sécurité Maximale",
+    description: "Nos rideaux métalliques de luxe offrent une protection robuste alliée à une esthétique moderne pour vos commerces et résidences.",
+    features: [
+      "Technologie silencieuse avancée (glissières et joints brevetés)",
+      "Lames professionnelles robustes 8/10 mm",
+      "Double protection : galvanisation + peinture epoxy thermodurcissable",
+      "Axe 100% galvanisé pour une durabilité exceptionnelle",
+      "Motorisation italienne certifiée (Garantie 3 ans)",
+      "Pack complet : Centrale de commande + 2 télécommandes HF"
+    ],
+    innovations: [
+      "Kit anti-bruit nouvelle génération",
+      "Design architectural flexible adaptable à tous bâtiments"
+    ],
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200"
+  },
+  {
+    id: "stores-bras-invisible",
+    title: "Store à Bras Invisible",
+    subtitle: "L'Excellence Élégante en Protection Solaire",
+    description: "Le store à bras invisible allie discrétion, robustesse et design épuré pour sublimer vos terrasses et vitrines.",
+    features: [
+      "Toile acrylique 100% étanche et résistante aux UV",
+      "Bras aluminium anodisé (Aviation), ultra-léger",
+      "Sur-mesure jusqu'à 6m de largeur",
+      "Mécanisme fluide et ultra-silencieux",
+      "Structure galvanisée anti-corrosion",
+      "Motorisation premium italienne incluse",
+      "Couleurs RAL personnalisables sur demande"
+    ],
+    advantages: [
+      "Garantie 1 an (pièces + main-d'œuvre)",
+      "Entretien minimal et longévité accrue",
+      "Design discret sans supports apparents"
+    ],
+    applications: [
+      "Résidences haut de gamme",
+      "Hôtels & Restaurants",
+      "Bureaux & Vitrines commerciales"
+    ],
+    image: "https://images.unsplash.com/photo-1513584684374-8bdb7443f383?auto=format&fit=crop&q=80&w=1200"
+  }
+];
+
+export const SERVICES: Service[] = [
+  {
+    title: "Installation Professionnelle",
+    description: "Nos techniciens qualifiés assurent une pose aux normes de sécurité les plus strictes pour une fiabilité totale.",
+    icon: <Settings className="w-8 h-8 text-blue-800" />
+  },
+  {
+    title: "Maintenance et SAV",
+    description: "Un service après-vente réactif pour garantir la pérennité de vos installations et interventions rapides 24/7.",
+    icon: <ShieldCheck className="w-8 h-8 text-blue-800" />
+  },
+  {
+    title: "Consultation Gratuite",
+    description: "Nos experts vous accompagnent dans le choix de la solution la mieux adaptée à vos besoins techniques et esthétiques.",
+    icon: <PenTool className="w-8 h-8 text-blue-800" />
+  },
+  {
+    title: "Devis Personnalisé",
+    description: "Recevez une offre détaillée et transparente sous 24h, adaptée à votre budget et aux contraintes de votre projet.",
+    icon: <Headset className="w-8 h-8 text-blue-800" />
+  }
+];
+
+export const PROJECTS: Project[] = [
+  { title: "Résidence Ariana", category: "Rideaux Métalliques", image: "https://picsum.photos/seed/p1/600/400" },
+  { title: "Boutique Tunis Centre", category: "Store Invisible", image: "https://picsum.photos/seed/p2/600/400" },
+  { title: "Restaurant Gammarth", category: "Store Invisible", image: "https://picsum.photos/seed/p3/600/400" },
+  { title: "Garage Villa Soukra", category: "Porte Automatique", image: "https://picsum.photos/seed/p4/600/400" },
+  { title: "Entrepôt Industriel", category: "Rideau Haute Sécurité", image: "https://picsum.photos/seed/p5/600/400" },
+  { title: "Showroom Luxe", category: "Store Bras Invisible", image: "https://picsum.photos/seed/p6/600/400" }
+];
+
+/* index.tsx */
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
+}
+
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFA - Portes et Fermetures Automatiques | Tunisie</title>
+    <meta name="description" content="PFA - Expert en portes automatiques et rideaux métalliques de luxe en Tunisie. Motorisation italienne premium, installation professionnelle, garantie 3 ans. Devis gratuit ☎ 46 985 975">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-white text-slate-900">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

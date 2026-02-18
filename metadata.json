@@ -1,0 +1,8 @@
+
+{
+  "name": "PFA - Portes et Fermetures Automatiques",
+  "description": "Site professionnel pour PFA, expert en installation de rideaux métalliques et stores à bras invisible en Tunisie.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
