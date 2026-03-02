@@ -9,7 +9,7 @@ const FloatingCTA: React.FC = () => {
       
       {/* Facebook */}
       <a 
-        href="https://www.facebook.com/YOUR_FACEBOOK_LINK"
+        href="https://www.facebook.com/profile.php?id=100066608413088"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 hover:bg-white hover:text-blue-600 border-2 border-blue-600"
@@ -21,7 +21,7 @@ const FloatingCTA: React.FC = () => {
       </a>
 
       {/* Instagram */}
-      <a 
+      /*<a 
         href="https://www.instagram.com/YOUR_INSTAGRAM_LINK"
         target="_blank"
         rel="noopener noreferrer"
@@ -32,7 +32,7 @@ const FloatingCTA: React.FC = () => {
           <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm4.25 5a5 5 0 100 10 5 5 0 000-10zm6.25-.88a1.12 1.12 0 11-2.25 0 1.12 1.12 0 012.25 0z"/>
         </svg>
       </a>
-
+*/
       {/* TikTok */}
       <a 
         href={COMPANY_INFO.tiktokLink}
