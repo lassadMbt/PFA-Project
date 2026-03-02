@@ -10,7 +10,9 @@ export const COMPANY_INFO = {
   phones: ["46 985 975", "+216 24 636 324"],
   email: "pfa.automatisem@gmail.com",
   tiktok: "@p.f.a.1",
-  tiktokLink: "https://www.tiktok.com/@p.f.a.1"
+  tiktokLink: "https://www.tiktok.com/@p.f.a.1",
+  facebook: "https://www.facebook.com/profile.php?id=100066608413088&rdid=ecMJx5ruuiuCF4VD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18BnLmtnQc%2F",
+  instagram: "https://www.instagram.com/pfa.automatisme/"
 };
 
 export const PRODUCTS: Product[] = [
@@ -31,34 +33,106 @@ export const PRODUCTS: Product[] = [
       "Kit anti-bruit nouvelle génération",
       "Design architectural flexible adaptable à tous bâtiments"
     ],
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200"
+    image: "../images/rideaux-metalliques.jpeg"
   },
+
   {
-    id: "stores-bras-invisible",
-    title: "Store à Bras Invisible",
-    subtitle: "L'Excellence Élégante en Protection Solaire",
-    description: "Le store à bras invisible allie discrétion, robustesse et design épuré pour sublimer vos terrasses et vitrines.",
+    id: "porte-sectionnelle-europeenne",
+    title: "Porte Sectionnelle Européenne – Haute Gamme",
+    subtitle: "Fabrication Européenne – Qualité Premium",
+    image: "../images/porte-sectionnelle.jpg",
+    description: "Porte sectionnelle robuste avec structure acier galvanisé, panneaux sandwich et isolation mousse polyuréthane injectée.",
+    features: [
+      "Largeur : 250 cm à 400 cm",
+      "Hauteur : 216 cm",
+      "Structure acier galvanisé haute résistance",
+      "Panneaux sandwich 40 mm",
+      "Isolation mousse polyuréthane injectée",
+      "Peinture au four anticorrosion",
+      "Rails et ressorts renforcés",
+      "Compatible motorisation automatique"
+    ]
+  },
+
+  {
+    id: "porte-entree-metallique",
+    title: "Porte d'Entrée Métallique – Finition Premium",
+    subtitle: "Sécurité Maximale et Finition Premium",
+    image: "/images/porte-entree.jpeg",
+    description: "Une porte d’entrée métallique premium conçue pour allier sécurité renforcée, design moderne et durabilité exceptionnelle.",
+    features: [
+      "Structure tubes lamellaires galvanisés",
+      "Peinture thermolaquée résistante",
+      "Pré-cadre 40x40 mm renforcé",
+      "Verrouillage encastré haute sécurité"
+    ]
+  },
+
+  {
+    id: "store-bras-invisible-haute-performance",
+    title: "Store à Bras Invisible – Haute Performance",
+    subtitle: "Motorisation Premium et Durabilité",
+    image: "../images/stores-bras-invisible.jpeg",
+    description: "Un store à bras invisible motorisé combinant protection solaire optimale, discrétion architecturale et fiabilité à long terme.",
     features: [
       "Toile acrylique 100% étanche et résistante aux UV",
-      "Bras aluminium anodisé (Aviation), ultra-léger",
-      "Sur-mesure jusqu'à 6m de largeur",
-      "Mécanisme fluide et ultra-silencieux",
-      "Structure galvanisée anti-corrosion",
-      "Motorisation premium italienne incluse",
-      "Couleurs RAL personnalisables sur demande"
-    ],
-    advantages: [
-      "Garantie 1 an (pièces + main-d'œuvre)",
-      "Entretien minimal et longévité accrue",
-      "Design discret sans supports apparents"
-    ],
-    applications: [
-      "Résidences haut de gamme",
-      "Hôtels & Restaurants",
-      "Bureaux & Vitrines commerciales"
-    ],
-    image: "https://images.unsplash.com/photo-1513584684374-8bdb7443f383?auto=format&fit=crop&q=80&w=1200"
-  }
+      "Bras aluminium anodisé ultra-léger",
+      "Largeur jusqu'à 6 m sur mesure",
+      "Motorisation italienne premium",
+      "Structure acier galvanisé renforcé",
+      "Finition thermolaquée RAL personnalisable"
+    ]
+  
+},
+
+{
+  id: "porte-coulissante-haute-performance",
+  title: "Porte Coulissante Haute Performance",
+  subtitle: "Fabrication Haute Qualité",
+  image: "../images/porte-coulissante.jpg",
+  description: "Une porte coulissante robuste et élégante conçue pour offrir performance, stabilité et finition professionnelle durable.",
+  features: [
+    "Double tôle micro-nervurée 10/10 galvanisée",
+    "Peinture époxy thermolaquée",
+    "Monorail oméga galvanisé haute stabilité"
+  ]
+},
+
+{
+  id: "porte-basculante-tubauto",
+  title: "Porte Basculante Haut de Gamme – Tubauto",
+  subtitle: "Structure Acier Galvanisé Haute Résistance",
+  image: "../images/porte-basculante.jpg",
+  description: "Une porte basculante premium alliant technologie avancée, sécurité renforcée et fiabilité durable pour un usage résidentiel ou professionnel.",
+  features: [
+    "Motorisation européenne performante",
+    "Sécurité intégrée anti-effraction",
+    "Garantie 36 mois",
+    "SAV professionnel rapide"
+  ]
+},
+
+
+{
+  id: "moteur-porte-coulissante",
+  title: "Moteur Porte Coulissante – Haute Gamme",
+  subtitle: "Motorisation Européenne Professionnelle",
+  image: "../images/moteur-porte-coulissante.jpeg",
+  description: "Une motorisation européenne haut de gamme garantissant puissance, fluidité et sécurité pour portails coulissants résidentiels et industriels.",
+  features: [
+    "Capacités : 400 kg à 2000 kg",
+    "230V résidentiel",
+    "24V usage intensif",
+    "36V brushless Speed",
+    "Photocellules incluses",
+    "Lampe LED",
+    "2 télécommandes",
+    "Crémaillère galvanisée",
+    "Compatible domotique"
+  ]
+}
+
+
 ];
 
 export const SERVICES: Service[] = [
@@ -85,10 +159,10 @@ export const SERVICES: Service[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  { title: "Résidence Ariana", category: "Rideaux Métalliques", image: "https://picsum.photos/seed/p1/600/400" },
-  { title: "Boutique Tunis Centre", category: "Store Invisible", image: "https://picsum.photos/seed/p2/600/400" },
-  { title: "Restaurant Gammarth", category: "Store Invisible", image: "https://picsum.photos/seed/p3/600/400" },
-  { title: "Garage Villa Soukra", category: "Porte Automatique", image: "https://picsum.photos/seed/p4/600/400" },
-  { title: "Entrepôt Industriel", category: "Rideau Haute Sécurité", image: "https://picsum.photos/seed/p5/600/400" },
-  { title: "Showroom Luxe", category: "Store Bras Invisible", image: "https://picsum.photos/seed/p6/600/400" }
+  { title: "Résidence Ariana", category: "Rideaux Métalliques", image: "../images/Réalisations/Rideaux-Métalliques.jpeg" },
+  { title: "", category: "Store Invisible", image: "../images/Réalisations/store-invisible.jpeg" },
+  { title: "", category: "Porte Coulissante", image: "../images/Réalisations/Porte-Coulissante.jpeg" },
+  { title: "", category: "Porte Basculante", image: "../images/Réalisations/Porte-Basculante.jpeg" },
+  { title: "", category: "Store Bras Invisible", image: "../images/Réalisations/Store-Bras-Invisible.jpeg" },
+  { title: "", category: "Rideau Haute Sécurité", image: "../images/Réalisations/moteur.jpeg" }
 ];

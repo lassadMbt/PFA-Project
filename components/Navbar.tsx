@@ -1,4 +1,5 @@
 /* components/Navbar.tsx */
+
 import React, { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { COMPANY_INFO } from '../constants';
@@ -27,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl transition-all duration-300 ${isScrolled || isOpen ? 'bg-blue-800 text-white group-hover:bg-orange-600' : 'bg-white text-blue-800 group-hover:bg-orange-500 group-hover:text-white'}`}>
-              P
+             <img src="/images/logo.png" alt="PFA Logo" className="w-6 h-6" />
             </div>
             <span className={`font-heading font-extrabold text-2xl tracking-tighter transition-colors ${isScrolled || isOpen ? 'text-blue-900 group-hover:text-blue-950' : 'text-white group-hover:text-orange-400'}`}>
               PFA

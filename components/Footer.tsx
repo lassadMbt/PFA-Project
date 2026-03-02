@@ -1,4 +1,5 @@
 /* components/Footer.tsx */
+
 import React from 'react';
 import { COMPANY_INFO } from '../constants';
 
@@ -58,11 +59,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm font-medium">
               <li className="flex justify-between">
                 <span>Lundi - Vendredi</span>
-                <span className="text-white">08:00 - 18:00</span>
+                <span className="text-white">08:30 - 16:00</span>
               </li>
               <li className="flex justify-between">
                 <span>Samedi</span>
-                <span className="text-white">08:00 - 14:00</span>
+                <span className="text-white">08:30 - 14:00</span>
               </li>
               <li className="flex justify-between">
                 <span>Dimanche</span>

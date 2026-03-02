@@ -17,13 +17,13 @@ const About: React.FC = () => {
         <div className="flex-1 relative">
           <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" 
+              src= "images\apropos.jpeg" 
               alt="Atelier PFA" 
               className="w-full aspect-[4/5] object-cover"
             />
           </div>
           <div className="absolute -bottom-10 -right-10 bg-white p-8 rounded-2xl shadow-xl z-20 hidden md:block">
-            <div className="text-5xl font-extrabold text-blue-900 mb-2">15+</div>
+            <div className="text-5xl font-extrabold text-blue-900 mb-2">4+</div>
             <div className="text-slate-500 font-bold uppercase tracking-tighter text-sm">Années d'Expérience</div>
           </div>
           <div className="absolute -top-6 -left-6 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl -z-10"></div>

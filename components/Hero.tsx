@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-10000 hover:scale-110"
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2000")' }}
+        style={{ backgroundImage: 'url("images/image.png")' }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/85 to-transparent"></div>
       </div>
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-white/20 pt-8">
             <div className="hover:translate-y-[-4px] transition-transform duration-300">
-              <div className="text-3xl font-bold text-orange-500">15+</div>
+              <div className="text-3xl font-bold text-orange-500">4+</div>
               <div className="text-xs text-slate-300 uppercase tracking-widest font-semibold">Ans d'Expérience</div>
             </div>
             <div className="hover:translate-y-[-4px] transition-transform duration-300">

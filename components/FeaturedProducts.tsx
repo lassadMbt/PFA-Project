@@ -24,10 +24,7 @@ const FeaturedProducts: React.FC = () => {
                   alt={product.title}
                   className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-6 left-6 bg-blue-900 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 shadow-lg z-10">
-                  <Star className="w-4 h-4 text-orange-400 fill-orange-400" />
-                  Produit Phare
-                </div>
+               
                 <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
