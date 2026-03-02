@@ -20,19 +20,7 @@ const FloatingCTA: React.FC = () => {
         </svg>
       </a>
 
-      {/* Instagram */}
-      /*<a 
-        href="https://www.instagram.com/YOUR_INSTAGRAM_LINK"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 bg-pink-500 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 hover:bg-white hover:text-pink-500 border-2 border-pink-500"
-        title="Instagram"
-      >
-        <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm4.25 5a5 5 0 100 10 5 5 0 000-10zm6.25-.88a1.12 1.12 0 11-2.25 0 1.12 1.12 0 012.25 0z"/>
-        </svg>
-      </a>
-*/
+      
       {/* TikTok */}
       <a 
         href={COMPANY_INFO.tiktokLink}

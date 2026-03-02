@@ -12,7 +12,6 @@ export const COMPANY_INFO = {
   tiktok: "@p.f.a.1",
   tiktokLink: "https://www.tiktok.com/@p.f.a.1",
   facebook: "https://www.facebook.com/profile.php?id=100066608413088&rdid=ecMJx5ruuiuCF4VD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18BnLmtnQc%2F",
-  //instagram: "https://www.instagram.com/pfa.automatisme/"
 };
 
 export const PRODUCTS: Product[] = [
