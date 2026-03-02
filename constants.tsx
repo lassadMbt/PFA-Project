@@ -12,7 +12,7 @@ export const COMPANY_INFO = {
   tiktok: "@p.f.a.1",
   tiktokLink: "https://www.tiktok.com/@p.f.a.1",
   facebook: "https://www.facebook.com/profile.php?id=100066608413088&rdid=ecMJx5ruuiuCF4VD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18BnLmtnQc%2F",
-  instagram: "https://www.instagram.com/pfa.automatisme/"
+  //instagram: "https://www.instagram.com/pfa.automatisme/"
 };
 
 export const PRODUCTS: Product[] = [
@@ -33,14 +33,14 @@ export const PRODUCTS: Product[] = [
       "Kit anti-bruit nouvelle génération",
       "Design architectural flexible adaptable à tous bâtiments"
     ],
-    image: "../images/rideaux-metalliques.jpeg"
+    image: "/images/rideaux-metalliques.jpeg"
   },
 
   {
     id: "porte-sectionnelle-europeenne",
     title: "Porte Sectionnelle Européenne – Haute Gamme",
     subtitle: "Fabrication Européenne – Qualité Premium",
-    image: "../images/porte-sectionnelle.jpg",
+    image: "/images/porte-sectionnelle.jpg",
     description: "Porte sectionnelle robuste avec structure acier galvanisé, panneaux sandwich et isolation mousse polyuréthane injectée.",
     features: [
       "Largeur : 250 cm à 400 cm",
@@ -72,7 +72,7 @@ export const PRODUCTS: Product[] = [
     id: "store-bras-invisible-haute-performance",
     title: "Store à Bras Invisible – Haute Performance",
     subtitle: "Motorisation Premium et Durabilité",
-    image: "../images/stores-bras-invisible.jpeg",
+    image: "/images/stores-bras-invisible.jpeg",
     description: "Un store à bras invisible motorisé combinant protection solaire optimale, discrétion architecturale et fiabilité à long terme.",
     features: [
       "Toile acrylique 100% étanche et résistante aux UV",
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
   id: "porte-coulissante-haute-performance",
   title: "Porte Coulissante Haute Performance",
   subtitle: "Fabrication Haute Qualité",
-  image: "../images/porte-coulissante.jpg",
+  image: "/images/porte-coulissante.jpg",
   description: "Une porte coulissante robuste et élégante conçue pour offrir performance, stabilité et finition professionnelle durable.",
   features: [
     "Double tôle micro-nervurée 10/10 galvanisée",
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
   id: "porte-basculante-tubauto",
   title: "Porte Basculante Haut de Gamme – Tubauto",
   subtitle: "Structure Acier Galvanisé Haute Résistance",
-  image: "../images/porte-basculante.jpg",
+  image: "/images/porte-basculante.jpg",
   description: "Une porte basculante premium alliant technologie avancée, sécurité renforcée et fiabilité durable pour un usage résidentiel ou professionnel.",
   features: [
     "Motorisation européenne performante",
@@ -117,7 +117,7 @@ export const PRODUCTS: Product[] = [
   id: "moteur-porte-coulissante",
   title: "Moteur Porte Coulissante – Haute Gamme",
   subtitle: "Motorisation Européenne Professionnelle",
-  image: "../images/moteur-porte-coulissante.jpeg",
+  image: "/images/moteur-porte-coulissante.jpeg",
   description: "Une motorisation européenne haut de gamme garantissant puissance, fluidité et sécurité pour portails coulissants résidentiels et industriels.",
   features: [
     "Capacités : 400 kg à 2000 kg",
@@ -159,10 +159,10 @@ export const SERVICES: Service[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  { title: "Résidence Ariana", category: "Rideaux Métalliques", image: "../images/Réalisations/Rideaux-Métalliques.jpeg" },
-  { title: "", category: "Store Invisible", image: "../images/Réalisations/store-invisible.jpeg" },
-  { title: "", category: "Porte Coulissante", image: "../images/Réalisations/Porte-Coulissante.jpeg" },
-  { title: "", category: "Porte Basculante", image: "../images/Réalisations/Porte-Basculante.jpeg" },
-  { title: "", category: "Store Bras Invisible", image: "../images/Réalisations/Store-Bras-Invisible.jpeg" },
-  { title: "", category: "Rideau Haute Sécurité", image: "../images/Réalisations/moteur.jpeg" }
+  { title: "Résidence Ariana", category: "Rideaux Métalliques", image: "/images/realisations/rideaux-metalliques.jpeg" },
+  { title: "", category: "Store Invisible", image: "/images/realisations/store-invisible.jpeg" },
+  { title: "", category: "Porte Coulissante", image: "/images/realisations/porte-coulissante.jpeg" },
+  { title: "", category: "Porte Basculante", image: "/images/realisations/porte-basculante.jpeg" },
+  { title: "", category: "Store Bras Invisible", image: "/images/realisations/store-bras-invisible.jpeg" },
+  { title: "", category: "Rideau Haute Sécurité", image: "/images/realisations/moteur.jpeg" }
 ];
