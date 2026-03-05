@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
   name: "PFA - Ste Portes et fermeture automatique SARL",
   shortName: "PFA Automatisme",
   address: "20 boulevards de l'environnement Ariana, Ariana, Tunisia",
-  phones: ["46 985 975", "+216 24 636 324"],
+  phones: ["24 636 324", "+216 24 636 324"],
   email: "pfa.automatisem@gmail.com",
   tiktok: "@p.f.a.1",
   tiktokLink: "https://www.tiktok.com/@p.f.a.1",
