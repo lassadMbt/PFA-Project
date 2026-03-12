@@ -10,7 +10,8 @@ export interface Product {
   innovations?: string[];
   advantages?: string[];
   applications?: string[];
-  image: string;
+  images: string[];
+  warranty?: string;
 }
 
 export interface Service {
