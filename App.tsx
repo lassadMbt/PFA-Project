@@ -1,14 +1,14 @@
 /* App.tsx */
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import FeaturedProducts from './components/FeaturedProducts';
-import About from './components/About';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import FloatingCTA from './components/FloatingCTA';
+import Navbar from './src/components/Navbar';
+import Hero from './src/components/Hero';
+import FeaturedProducts from './src/components/FeaturedProducts';
+import About from './src/components/About';
+import Services from './src/components/Services';
+import Portfolio from './src/components/Portfolio';
+import Contact from './src/components/Contact';
+import Footer from './src/components/Footer';
+import FloatingCTA from './src/components/FloatingCTA';
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
