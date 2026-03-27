@@ -1,7 +1,7 @@
 /* components/FloatingCTA.tsx */
 
 import React from 'react';
-import { COMPANY_INFO } from '../constants';
+import { COMPANY_INFO } from '../../constants';
 
 const FloatingCTA: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const FloatingCTA: React.FC = () => {
         href="https://www.facebook.com/profile.php?id=100066608413088"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 hover:bg-white hover:text-blue-600 border-2 border-blue-600"
+        className="w-14 h-14 bg-gray-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 hover:bg-white hover:text-blue-600 border-2 border-blue-600"
         title="Facebook"
       >
         <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">

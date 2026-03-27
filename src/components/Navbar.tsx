@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import { COMPANY_INFO } from '../constants';
+import { COMPANY_INFO } from '../../constants';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -15,6 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: 'Accueil', href: '#accueil' },
     { name: 'Produits', href: '#produits' },
     { name: 'Services', href: '#services' },
+    { name: 'Partenaires', href: '#partenaires' },
     { name: 'À Propos', href: '#a-propos' },
     { name: 'Réalisations', href: '#realisations' },
     { name: 'Contact', href: '#contact' },
@@ -27,10 +28,10 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl transition-all duration-300 ${isScrolled || isOpen ? 'bg-blue-800 text-white group-hover:bg-orange-600' : 'bg-white text-blue-800 group-hover:bg-orange-500 group-hover:text-white'}`}>
+            <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl transition-all duration-300 ${isScrolled || isOpen ? 'bg-gray-700 text-white group-hover:bg-orange-600' : 'bg-white text-gray-700 group-hover:bg-gray-500 group-hover:text-white'}`}>
              <img src="/images/logo.png" alt="PFA Logo" className="w-6 h-6" />
             </div>
-            <span className={`font-heading font-extrabold text-2xl tracking-tighter transition-colors ${isScrolled || isOpen ? 'text-blue-900 group-hover:text-blue-950' : 'text-white group-hover:text-orange-400'}`}>
+            <span className={`font-heading font-extrabold text-2xl tracking-tighter transition-colors ${isScrolled || isOpen ? 'text-gray-800 group-hover:text-gray-900' : 'text-white group-hover:text-gray-400'}`}>
               PFA
             </span>
           </div>
@@ -41,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-orange-500 ${isScrolled ? 'text-slate-700 hover:text-blue-900' : 'text-white hover:text-orange-400'}`}
+                className={`font-semibold transition-all duration-200 border-b-2 border-transparent hover:border-gray-500 ${isScrolled ? 'text-slate-700 hover:text-gray-800' : 'text-white hover:text-gray-400'}`}
               >
                 {link.name}
               </a>
@@ -50,8 +51,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               href={getPhoneHref(COMPANY_INFO.phones[0])}
               className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all transform hover:scale-105 border-2 shadow-md ${
                 isScrolled 
-                  ? 'bg-orange-500 border-orange-500 text-white hover:bg-blue-950 hover:border-blue-950' 
-                  : 'bg-orange-500 border-orange-500 text-white hover:bg-white hover:text-orange-600 hover:border-white'
+                  ? 'bg-gray-500 border-gray-500 text-white hover:bg-gray-900 hover:border-gray-900' 
+                  : 'bg-gray-500 border-gray-500 text-white hover:bg-white hover:text-gray-600 hover:border-white'
               }`}
             >
               <Phone className="w-4 h-4" />
@@ -85,14 +86,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-xl font-bold text-slate-800 hover:text-blue-900 transition-colors w-full text-center py-2"
+                className="text-xl font-bold text-slate-800 hover:text-gray-800 transition-colors w-full text-center py-2"
               >
                 {link.name}
               </a>
             ))}
             <a
               href={getPhoneHref(COMPANY_INFO.phones[0])}
-              className="bg-orange-500 text-white border-2 border-orange-500 px-10 py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-blue-950 hover:border-blue-950 transition-all shadow-lg w-full max-w-xs"
+              className="bg-gray-500 text-white border-2 border-gray-500 px-10 py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-gray-900 hover:border-gray-900 transition-all shadow-lg w-full max-w-xs"
             >
               <Phone className="w-5 h-5" />
               Appeler Maintenant
@@ -114,3 +115,4 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 };
 
 export default Navbar;
+

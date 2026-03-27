@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
-import { COMPANY_INFO } from "../constants";
+import { COMPANY_INFO } from "../../constants";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-orange-500 font-bold uppercase tracking-widest mb-4">
+          <h2 className="text-gray-600 font-bold uppercase tracking-widest mb-4">
             Contactez-nous
           </h2>
           <h3 className="text-4xl font-heading font-extrabold text-white mb-8">
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
 
           <div className="space-y-8 mb-12">
             <div className="flex items-start gap-6 group">
-              <div className="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center shrink-0 border border-blue-700/50 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-gray-700/50 flex items-center justify-center shrink-0 border border-gray-600/50 group-hover:bg-gray-500 group-hover:border-gray-500 transition-all duration-300">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex items-start gap-6 group">
-              <div className="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center shrink-0 border border-blue-700/50 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-gray-700/50 flex items-center justify-center shrink-0 border border-gray-600/50 group-hover:bg-gray-500 group-hover:border-gray-500 transition-all duration-300">
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
                   <a
                     key={i}
                     href={getPhoneHref(tel)}
-                    className="block text-slate-400 hover:text-orange-500 transition-colors font-semibold"
+                    className="block text-slate-400 hover:text-gray-600 transition-colors font-semibold"
                   >
                     {tel}
                   </a>
@@ -85,14 +85,14 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex items-start gap-6 group">
-              <div className="w-12 h-12 rounded-full bg-blue-800/50 flex items-center justify-center shrink-0 border border-blue-700/50 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-gray-700/50 flex items-center justify-center shrink-0 border border-gray-600/50 group-hover:bg-gray-500 group-hover:border-gray-500 transition-all duration-300">
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h5 className="font-bold text-lg mb-1">Email</h5>
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
-                  className="text-slate-400 hover:text-orange-500 transition-colors font-semibold"
+                  className="text-slate-400 hover:text-gray-600 transition-colors font-semibold"
                 >
                   {COMPANY_INFO.email}
                 </a>
@@ -113,10 +113,10 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="bg-white rounded-3xl p-8 md:p-12 text-slate-900 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gray-200/30 rounded-full -mr-16 -mt-16"></div>
           <h4 className="text-2xl font-bold mb-6 flex items-center gap-2">
             Devis Gratuit en 24h
-            <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></span>
           </h4>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -131,7 +131,7 @@ const Contact: React.FC = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all focus:bg-white"
                   placeholder="Ex: Ahmed Ben Salah"
                 />
               </div>
@@ -146,7 +146,7 @@ const Contact: React.FC = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all focus:bg-white"
                   placeholder="Ex: 46 985 975"
                 />
               </div>
@@ -161,12 +161,20 @@ const Contact: React.FC = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, project: e.target.value })
                 }
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all focus:bg-white"
               >
                 <option>Rideau métallique</option>
+                <option>Porte battante</option>
+                <option>Porte collissante</option>
+                <option>Pote sectionnelle</option>
+                <option>Porte basculante</option>
                 <option>Store à bras invisible</option>
-                <option>Automatisation de porte existante</option>
+                <option>Bris de voiture</option>
+                <option>Moteur pour porte battante</option>
+                <option>Moteur pour rideau</option>
+                <option>Moteur pour porte colissante</option>
                 <option>Maintenance / SAV</option>
+
                 <option>Autre</option>
               </select>
             </div>
@@ -181,14 +189,14 @@ const Contact: React.FC = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 transition-all focus:bg-white"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all focus:bg-white"
                 placeholder="Décrivez brièvement votre besoin..."
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-orange-500 text-white border-2 border-orange-500 font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] shadow-xl hover:bg-white hover:text-blue-950 hover:border-white"
+              className="w-full bg-gray-500 text-white border-2 border-gray-500 font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] shadow-xl hover:bg-white hover:text-gray-900 hover:border-white"
             >
               Envoyer ma demande
               <Send className="w-5 h-5" />

@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
   name: "PFA - Ste Portes et fermeture automatique SARL",
   shortName: "PFA Automatisme",
   address: "20 boulevards de l'environnement Ariana, Ariana, Tunisia",
-  phones: ["24 636 324", "+216 24 636 324"],
+  phones: ["+216 46 985 975", "+216 24 636 324", "+216 24 636 391"],
   email: "pfa.automatisem@gmail.com",
   tiktok: "@p.f.a.1",
   tiktokLink: "https://www.tiktok.com/@p.f.a.1",
@@ -210,22 +210,22 @@ export const SERVICES: Service[] = [
   {
     title: "Installation Professionnelle",
     description: "Nos techniciens qualifiés assurent une pose aux normes de sécurité les plus strictes pour une fiabilité totale.",
-    icon: <Settings className="w-8 h-8 text-blue-800" />
+    icon: <Settings className="w-8 h-8 text-gray-700" />
   },
   {
     title: "Maintenance et SAV",
     description: "Un service après-vente réactif pour garantir la pérennité de vos installations et interventions rapides 24/7.",
-    icon: <ShieldCheck className="w-8 h-8 text-blue-800" />
+    icon: <ShieldCheck className="w-8 h-8 text-gray-700" />
   },
   {
     title: "Consultation Gratuite",
     description: "Nos experts vous accompagnent dans le choix de la solution la mieux adaptée à vos besoins techniques et esthétiques.",
-    icon: <PenTool className="w-8 h-8 text-blue-800" />
+    icon: <PenTool className="w-8 h-8 text-gray-700" />
   },
   {
     title: "Devis Personnalisé",
     description: "Recevez une offre détaillée et transparente sous 24h, adaptée à votre budget et aux contraintes de votre projet.",
-    icon: <Headset className="w-8 h-8 text-blue-800" />
+    icon: <Headset className="w-8 h-8 text-gray-700" />
   }
 ];
 
@@ -237,3 +237,4 @@ export const PROJECTS: Project[] = [
   { title: "", category: "Store Bras Invisible", image: "/images/realisations/store-bras-invisible.jpeg" },
   { title: "", category: "Rideau Haute Sécurité", image: "/images/realisations/moteur.jpeg" }
 ];
+
