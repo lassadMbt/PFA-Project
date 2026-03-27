@@ -1,8 +1,20 @@
 /* components/Hero.tsx */
 import React from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
+import { supabase } from "../lib/supabase";
+import { useEffect } from 'react';
+
 
 const Hero: React.FC = () => {
+
+
+  useEffect(() => {
+    supabase
+      .rpc("increment_visits")
+      .then(({ error }) => console.log("Visit tracked, error:", error)); // ← is this here?
+  }, []);
+
+
   return (
     <div className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
