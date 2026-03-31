@@ -3,6 +3,7 @@ import React from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
 import { supabase } from "../lib/supabase";
 import { useEffect } from 'react';
+import { h1 } from 'framer-motion/client';
 
 
 const Hero: React.FC = () => {
@@ -27,17 +28,24 @@ const Hero: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl text-white">
-          <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/40 text-blue-300 px-4 py-1.5 rounded-full text-sm font-bold mb-6 backdrop-blur-md">
+        <br></br>
+        <br></br>
+        <br></br>
+        <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/40 text-blue-300 px-4 py-1.5 rounded-full text-sm font-bold mb-6 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
             </span>
             Expertise Premium en Tunisie
           </div>
-          
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 leading-tight">
-            L'Excellence en <span className="text-blue-400">Automatisation</span>
-          </h1>
+            Société
+             </h1>
+            <h1 className="text-5xl md:text-7xl font-heading font-extrabold mb-6 leading-tight">
+            
+            <span className="text-blue-400">
+            Porte Fermeture Automatique</span>
+            </h1>
           
           <p className="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed font-light">
             Portes, rideaux métalliques et stores haut de gamme. Design italien, robustesse tunisienne.
